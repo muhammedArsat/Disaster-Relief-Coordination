@@ -9,7 +9,7 @@ const VolunteerRegister = () => {
                 beatae facere minima? Totam, corporis vero?
             </h1>
             <div className="grid sm:grid-cols-2 mt-10">
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center animate-bounce">
                     <img src={Image} alt="Volunteer-image" />
                 </div>
                 <div className="flex flex-col gap-5 mr-6">

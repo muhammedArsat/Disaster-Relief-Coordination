@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className="hidden sm:block">
                         <li
                             className={`${
-                                pathname === '/admin/relif' ? 'bg-blue-400 rounded-md text-white' : ''
+                                pathname === '/admin/home' ? 'bg-blue-400 rounded-md text-white' : ''
                             } p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer`}
                         >
                             Relief Areas

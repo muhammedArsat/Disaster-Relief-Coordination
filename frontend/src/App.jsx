@@ -26,7 +26,7 @@ const App = () => {
                     path="/admin/volunteer-profile"
                     element={<VolunteerProfile />}
                 />
-                <Route path="/admin/relif" element={<ReliefPage />} />
+                <Route path="/admin/relief" element={<ReliefPage />} />
                 <Route path="/admin/new-request" element={<NewRequest />} />
                 <Route path='/register' element={<VolunteerRegister/>} />
             </Routes>
