@@ -67,7 +67,7 @@ const Home = () => {
           <input
             id="search"
             type="search"
-            placeholder="Search for Relief Areas"
+            placeholder="Search for the Relief Areas"
             className=" sm:py-4 pl-12 outline-blue-400 bg-slate-200 rounded-lg px-3 py-2 text-xs w-full sm:text-sm "
           />
         </div>
