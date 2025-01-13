@@ -1,9 +1,13 @@
+// Relief.js
 import React from 'react';
 import Map from '../../components/map/Map';
-import { FaFemale } from 'react-icons/fa';
-import { FaChild } from 'react-icons/fa';
+import { FaFemale, FaChild, FaMale } from 'react-icons/fa';
+import { FaBowlFood } from "react-icons/fa6";
+import { GiClothes } from "react-icons/gi";
 import FundProgress from '../../components/fund/Fund';
+import { FaBriefcaseMedical } from "react-icons/fa";
 import PopulationCard from '../../components/population/Population';
+import { MdCleanHands } from "react-icons/md";
 
 const Relief = () => {
     return (
@@ -20,22 +24,22 @@ const Relief = () => {
             </div>
 
             <div>
-                <h1 className="text-xl font-medium m-6 text-center">
+                <h1 className="text-xl font-medium m-6 text-center tracking-wide">
                     People Count
                 </h1>
                 <div className='grid sm:grid-cols-3'>
-                    <PopulationCard />
-                    <PopulationCard />
-                    <PopulationCard />
+                    <PopulationCard Image={FaChild} gender={'Child'} count={'2,000'}/>
+                    <PopulationCard Image={FaFemale} gender={'Female'} count={'3,000'}/>
+                    <PopulationCard Image={FaMale} gender={'Male'} count={'4,000'}/>
                 </div>
             </div>
 
             <div className="m-7">
-                <h1 className="text-xl font-medium text-center">Fund Status</h1>
-                <FundProgress />
-                <FundProgress />
-                <FundProgress />
-                <FundProgress />
+                <h1 className="text-xl font-medium text-center tracking-wide">Fund Status</h1>
+                <FundProgress total={1000} current={100} image={FaBowlFood} fundType={'Food'}/>
+                <FundProgress total={2000} current={900} image={MdCleanHands} fundType={'Hygene'}/>
+                <FundProgress total={5000} current={500} image={GiClothes} fundType={'Cloth'}/>
+                <FundProgress total={6000} current={5999} image={FaBriefcaseMedical} fundType={'Medical Kit'}/>
             </div>
         </div>
     );

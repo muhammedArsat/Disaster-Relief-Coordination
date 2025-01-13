@@ -7,6 +7,8 @@ import HomePage from './pages/home/Home';
 import PostPage from './pages/post/Post';
 import VolunteerList from './pages/volunteerlist/VolunteerList';
 import VolunteerProfile from './pages/volunteerprofile/VolunteerProfile';
+import NewRequest from './pages/newrequest/NewRequest';
+import VolunteerRegister from './pages/volunteerRegister/VolunteerRegister';
 import './App.css';
 const App = () => {
     return (
@@ -25,6 +27,8 @@ const App = () => {
                     element={<VolunteerProfile />}
                 />
                 <Route path="/admin/relif" element={<ReliefPage />} />
+                <Route path="/admin/new-request" element={<NewRequest />} />
+                <Route path='/register' element={<VolunteerRegister/>} />
             </Routes>
         </BrowserRouter>
     );

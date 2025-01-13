@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CiMenuBurger } from 'react-icons/ci';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 const Navbar = () => {
     const { pathname } = useLocation();
     const [isMobile, setIsMobile] = useState(false);
@@ -14,12 +14,13 @@ const Navbar = () => {
     }, [isMobile]);
 
     useEffect(() => {
-        if (pathname === '/') {
+        if (pathname === '/' || pathname === '/register') {
             setIsLandingPage(true);
         } else {
             setIsLandingPage(false);
         }
     }, [pathname]);
+    const navigate = useNavigate();
     return (
         <>
             {!isLandingPage && (
@@ -33,16 +34,27 @@ const Navbar = () => {
                         onClick={() => setIsMobile(!isMobile)}
                     />
                     <ul className="hidden sm:block">
-                        <li className="p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer  ">
+                        <li
+                            className={`${
+                                pathname === '/admin/relif' ? 'bg-blue-400 rounded-md text-white' : ''
+                            } p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer`}
+                        >
                             Relief Areas
                         </li>
-                        <li className="p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer">
+
+                        <li
+                            className={`${
+                                pathname === '/admin/volunteer-list' ? 'bg-blue-400 rounded-md text-white' : ''
+                            } p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer`}
+                        >
                             Volunteers
                         </li>
-                        <li className="p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer ">
+                        <li className={`${
+                                pathname === '/admin/new-request' ? 'bg-blue-400 rounded-md text-white' : ''
+                            } p-4 flex justify-center items-center w-56 text-lg font-medium cursor-pointer`}>
                             New Requests
                         </li>
-                        <li className="p-4 flex justify-center items-center w-56 text-lg font-medium absolute bottom-0 cursor-pointer">
+                        <li className="p-4 flex justify-center items-center w-56 text-lg font-medium absolute bottom-2 cursor-pointer bg-slate-400 rounded-lg hover:scale-105 transition-transform hover:shadow-lg text-white" onClick={()=>navigate('/')}>
                             logout
                         </li>
                     </ul>
@@ -51,14 +63,14 @@ const Navbar = () => {
                             isMobile ? 'left-0' : '-left-full'
                         } sm:hidden absolute bg-white top-24  p-4 h-screen transition-all z-10`}
                     >
-                        <li className="p-4 font-medium text-lg">
+                        <li className={`${pathname === '/admin/relif' ? "bg-blue-400 text-white p-3 rounded-lg" : ''}p-4 font-medium text-lg `}>
                             Relief Areas
                         </li>
-                        <li className="p-4 font-medium text-lg">Volunteers</li>
-                        <li className="p-4 font-medium text-lg">
+                        <li className={`${pathname === '/admin/volunteer-list' ? "bg-blue-400 text-white p-3 rounded-lg" : ''}p-4 font-medium text-lg `}>Volunteers</li>
+                        <li className={`${pathname === '/admin/new-request' ? "bg-blue-400 text-white p-3 rounded-lg" : ''}p-4 font-medium text-lg `}>
                             New Requests
                         </li>
-                        <li className=" p-4 absolute bottom-36 flex justify-center items-center w-full right-1 font-medium text-lg">
+                        <li className=" p-4 absolute bottom-36 flex justify-center items-center w-36 left-5 font-medium text-lg bg-slate-400 rounded-lg text-white  ">
                             logout
                         </li>
                     </ul>
