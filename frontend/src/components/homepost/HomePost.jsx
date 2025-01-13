@@ -7,7 +7,7 @@ const HomePost = ({ place, image, disaster, description, date, time }) => {
       <img
         src={image}
         alt={`Image of ${place}`}
-        className="w-16 h-16 rounded-full border-2 border-gray-400 sm:w-24 sm:h-24"
+        className="w-16 h-16 rounded-full border-2 border-gray-100 sm:w-24 sm:h-24"
       />
       <div
         className="grid grid-cols-4 space-x-6 w-full overflow-hidden hover:overflow-x-auto scrollbar-hidden items-center text-center text-xs ml-2 sm:ml-5 sm:mr-5 sm:text-base sm:w-full"
