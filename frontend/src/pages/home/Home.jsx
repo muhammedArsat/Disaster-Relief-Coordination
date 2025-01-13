@@ -51,7 +51,7 @@ const Home = () => {
   ];
 
   return (
-    <div className='mt-24 sm:ml-72 sm:mr-2 '>
+    <div className='mt-24 sm:mt-0 sm:ml-72 sm:mr-2 '>
       <div className='flex justify-between py-7 px-5 sm:py-7 sm:px-8'>
         <h1 className='text-lg font-medium sm:text-2xl sm:font-semibold'>Relief Areas</h1>
         <ul className='flex'>
