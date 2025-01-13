@@ -51,7 +51,7 @@ const Home = () => {
   ];
 
   return (
-    <div className='mt-24 sm:ml-72 sm:mr-2 '>
+    <div className='mt-24 sm:mt-0 sm:ml-72 sm:mr-2 '>
       <div className='flex justify-between py-7 px-5 sm:py-7 sm:px-8'>
         <h1 className='text-lg font-medium sm:text-2xl sm:font-semibold'>Relief Areas</h1>
         <ul className='flex'>
@@ -63,12 +63,12 @@ const Home = () => {
       </div>
       <div className="flex flex-col items-start px-5 sm:p-2 sm:justify-center sm:align-center">
         <div className="relative w-full">
-          <LuFilter className="absolute left-3 top-3 text-gray-500 sm:left-5 sm:top-3" />
+          <LuFilter className="absolute left-3 top-2 text-gray-500 sm:left-5 sm:top-3 sm:h-7" />
           <input
             id="search"
             type="search"
             placeholder="Search for Relief Areas"
-            className="bg-gray-100 pl-12 border rounded-lg px-3 py-2 text-xs w-full sm:text-sm "
+            className=" sm:py-4 pl-12 outline-blue-400 bg-slate-200 rounded-lg px-3 py-2 text-xs w-full sm:text-sm "
           />
         </div>
         <div className='flex flex-col items-start py-5 px-1 sm:w-full'>
