@@ -2,12 +2,14 @@ import React,{useEffect} from 'react';
 import HeroImg from '../../assets/HeroImg.jpg';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
+import {useNavigate} from 'react-router-dom'
 const Landing = () => {
 
     useEffect(()=>{
         Aos.init({duration:3000})
     },[])
+
+    const navigate = useNavigate();
     return (
         <div>
             <nav className="flex justify-between py-7 px-5 shadow-lg items-center">
@@ -58,7 +60,8 @@ const Landing = () => {
                     Are You Become Volunteer ?
                 </p>
                 <div className="flex justify-center items-center mt-3">
-                    <button className="bg-blue-400 py-2 px-7 rounded-lg w-4/4 text-white" data-aos='slide-left'>
+                    <button className="bg-blue-400 py-2 px-7 rounded-lg w-4/4 text-white" data-aos='slide-left'
+                    onClick={()=> navigate('/register')}>
                         Become Volunteer
                     </button>
                 </div>
