@@ -9,6 +9,7 @@ import VolunteerList from './pages/volunteerlist/VolunteerList';
 import VolunteerProfile from './pages/volunteerprofile/VolunteerProfile';
 import NewRequest from './pages/newrequest/NewRequest';
 import VolunteerRegister from './pages/volunteerRegister/VolunteerRegister';
+import VolunteerApproval from './pages/volunteerApproval/VolunteerApproval';
 import './App.css';
 const App = () => {
     return (
@@ -28,7 +29,11 @@ const App = () => {
                 />
                 <Route path="/admin/relief" element={<ReliefPage />} />
                 <Route path="/admin/new-request" element={<NewRequest />} />
-                <Route path='/register' element={<VolunteerRegister/>} />
+                <Route path="/register" element={<VolunteerRegister />} />
+                <Route
+                    path="/admin/volunteer-approval"
+                    element={<VolunteerApproval />}
+                />
             </Routes>
         </BrowserRouter>
     );
