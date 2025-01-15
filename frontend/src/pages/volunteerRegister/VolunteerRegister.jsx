@@ -4,7 +4,7 @@ import Image from '../../assets/VolunteerImg.jpg';
 const VolunteerRegister = () => {
     return (
         <div className="p-5">
-            <h1 className="text-center">
+            <h1 className="text-center tracking-wider font-medium">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit
                 beatae facere minima? Totam, corporis vero?
             </h1>
@@ -102,7 +102,7 @@ const VolunteerRegister = () => {
                         />
                     </div>
                     <div className="mb-5 flex justify-center items-center">
-                        <button className="bg-blue-400 text-white px-4 py-3 rounded-md">
+                        <button className="bg-blue-400 text-white px-4 py-3 rounded-md hover:scale-105 hover:transition-transform hover:shadow-lg">
                             Register
                         </button>
                     </div>
