@@ -10,7 +10,7 @@ const HomePost = ({ place, image, disaster, description, date, time }) => {
         className="w-16 h-16 rounded-full border-2 border-gray-100 sm:w-24 sm:h-24"
       />
       <div
-        className="grid grid-cols-4 space-x-6 w-full overflow-hidden hover:overflow-x-auto scrollbar-hidden items-center text-center text-xs ml-2 sm:ml-5 sm:mr-5 sm:text-base sm:w-full"
+        className="grid grid-cols-4 space-x-6 w-full overflow-hidden hover:overflow-x-auto scrollbar-hidden items-center text-left text-xs ml-2 sm:ml-5 sm:mr-5 sm:text-base sm:w-full"
       >
         <p className="text-gray-700 p-2">{place}</p>
         <p className="text-gray-700 p-1 ml-2">{disaster}</p>
