@@ -1,13 +1,14 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import HeroImg from '../../assets/HeroImg.jpg';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
+import { useNavigate } from 'react-router-dom';
 const Landing = () => {
+    useEffect(() => {
+        Aos.init({ duration: 3000 });
+    }, []);
 
-    useEffect(()=>{
-        Aos.init({duration:3000})
-    },[])
+    const navigate = useNavigate();
     return (
         <div>
             <nav className="flex justify-between py-7 px-5 shadow-lg items-center">
@@ -20,46 +21,70 @@ const Landing = () => {
             </nav>
 
             <div className="flex flex-col-reverse mt-5 p-4 mb-10 mr-3 ml-3 sm:flex-row sm:justify-center sm:items-center">
-                <div className='sm:basis-2/4 sm:flex sm:flex-col sm:justify-center sm:items-center sm:mx-10 '>
-                    <p className="font-medium " data-aos='zoom-in'>
+                <div className="sm:basis-2/4 sm:flex sm:flex-col sm:justify-center sm:items-center sm:mx-10 ">
+                    <p className="font-medium " data-aos="zoom-in">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Id fuga dolores assumenda rem dolore, ipsa numquam
                         quaerat, quidem ratione incidunt, amet itaque
                         temporibus. Nulla ad, aut modi molestiae veniam est.
                     </p>
                     <div className="flex justify-center items-center mt-3 sm:basis-2/4">
-                        <button className="bg-blue-400 py-4 px-7 rounded-lg w-2/4 sm:w-full text-white" data-aos='slide-left'>
+                        <button
+                            className="bg-blue-400 py-4 px-7 rounded-lg w-2/4 sm:w-full text-white hover:shadow-md hover:shadow-blue-400 transition-all hover:scale-105"
+                            data-aos="slide-left"
+                        >
                             Get Started
                         </button>
                     </div>
                 </div>
-                <div className="flex justify-center items-center sm:basis-2/4" data-aos='slide-right'>
+                <div
+                    className="flex justify-center items-center sm:basis-2/4"
+                    data-aos="slide-right"
+                >
                     <img src={HeroImg} alt="Hero Image " className="w-80 " />
                 </div>
             </div>
-
+            <h1 className="w-full text-center text-xl tracking-wider font-semibold">
+                Lorem, ipsum.
+            </h1>
             <div className="grid gap-5 mx-5 mb-10 sm:grid-cols-3">
-                <div className="flex flex-col justify-center items-center shadow-lg rounded-md " data-aos='zoom-in'>
+                <div
+                    className="flex flex-col justify-center items-center shadow-lg rounded-md "
+                    data-aos="zoom-in"
+                >
                     <img src={HeroImg} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
-                <div className="flex flex-col justify-center items-center shadow-lg rounded-md" data-aos='zoom-in'>
+                <div
+                    className="flex flex-col justify-center items-center shadow-lg rounded-md"
+                    data-aos="zoom-in"
+                >
                     <img src={HeroImg} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>{' '}
-                <div className="flex flex-col justify-center items-center shadow-lg rounded-md" data-aos='zoom-in'>
+                <div
+                    className="flex flex-col justify-center items-center shadow-lg rounded-md"
+                    data-aos="zoom-in"
+                >
                     <img src={HeroImg} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
             </div>
 
             <div className="flex flex-col justify-center items-center gap-3 p-5">
-                <p className="text-center text-lg font-medium" data-aos='slide-right'>
-                    Are You Become Volunteer ?
+                <p
+                    className="text-center text-lg font-medium "
+                    data-aos="slide-right"
+                >
+                    Are You Become a Volunteer ?
                 </p>
                 <div className="flex justify-center items-center mt-3">
-                    <button className="bg-blue-400 py-2 px-7 rounded-lg w-4/4 text-white" data-aos='slide-left'>
-                        Become Volunteer
+                    <button
+                        className="bg-blue-400 py-2 px-7 rounded-lg w-4/4 text-white hover:shadow-md hover:shadow-blue-400 transition-all hover:scale-105"
+                        data-aos="slide-left"
+                        onClick={() => navigate('/register')}
+                    >
+                        Become a Volunteer
                     </button>
                 </div>
             </div>

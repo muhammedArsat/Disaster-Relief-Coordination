@@ -1,15 +1,15 @@
 import React from 'react';
 import { FaMale } from 'react-icons/fa';
 
-const Population = () => {
+const Population = ({Image : Icon , gender, count}) => {
     return (
         <div>
             <div className="mx-7 flex justify-center items-center flex-col gap-5 shadow-md p-5 rounded-md ">
                 <div className="flex justify-center items-center">
-                    <h3 className="text-2xl">Men</h3>
-                    <FaMale size={30} />
+                    <h3 className="text-2xl">{gender}</h3>
+                    <Icon  />
                 </div>
-                <h1 className="text-xl">1,000</h1>
+                <h1 className="text-xl">{count}</h1>
             </div>
         </div>
     );
