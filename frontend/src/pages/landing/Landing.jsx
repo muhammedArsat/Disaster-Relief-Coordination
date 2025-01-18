@@ -39,7 +39,7 @@ const Landing = () => {
                 </div>
                 <div
                     className="flex justify-center items-center sm:basis-2/4"
-                    data-aos="slide-right"
+                    data-aos="zoom-in"
                 >
                     <img src={HeroImg} alt="Hero Image " className="w-80 " />
                 </div>
