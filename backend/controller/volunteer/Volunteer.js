@@ -19,27 +19,91 @@ exports.addNewVolunteer = async (req, res, next) => {
 
         await newVolunteer.save();
         res.status(201).json({
-            message: 'successfully new volunteer added',
+            status:"success",
             newVolunteer,
         });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({
+
+            status:"success",
+            message: err.message });
+    }
+};
+
+//localhost:3000/api/v1/volunteer (GET)
+exports.getVolunteers = async (req, res, next) => {
+    try {
+
+        const action = req.query.action;
+
+        if(action === "APPROVED"){
+            const approvedVolunteers = await VolunteerModal.find({status: "APPROVED"});
+            const length = approvedVolunteers.length;
+            res.status(200).json({
+                status:"success",
+                approvedVolunteers,
+                length
+            });
+        }
+        else if(action === "PENDING"){
+            const pendingVolunteers = await VolunteerModal.find({status : "PENDING"});
+            const length = pendingVolunteers.length;
+            res.status(200).json({
+                status:"success",
+                pendingVolunteers,
+                length
+            })
+        }
+
+        else if(action ==="REJECTED"){
+            const rejectedRegistrations = await VolunteerModal.find({status:"REJECTED"});
+            const length = rejectedRegistrations.length;
+            res.status(200).json({
+                status:"success",
+                rejectedRegistrations,
+                length
+
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            status:"Failure",
+            message: 'Internal Server Error',
+        });
     }
 };
 
 
+//localhost:3000/api/v1/volunteer( PUT)
+exports.validateRegistration = async (req, res, next) => {
+    try {
+        const action = req.query.action;
+        const volunteerId = req.params.id;
 
-//localhost:3000/api/v1/volunteer (GET)
-exports.getAllRegisteredVolunteer = async (req, res, next) => {
-try{
-    const allRegisteredVolunteer = VolunteerModal.find();
-    res.status(200).json({
-        allRegisteredVolunteer
-    })
-}catch(error){
+        const volunteer = await VolunteerModal.findById(volunteerId);
+
+        if (!volunteer) {
+            res.status(404).json({
+                status:"success",
+                message: 'The volunteer is Not Found',
+            });
+        }
+        if (action === 'APPROVE') {
+            volunteer.status = 'APPROVED';
+        } else {
+            volunteer.status = 'REJECTED';
+        }
+
+        await volunteer.save();
+        res.status(200).json({
+            message: 'success',
+            volunteer,
+        });
+    } catch (error) {
         res.status(500).json({
-            message:"Internal Server Error"
-        })
-}
-
+            status:"Failure",
+            message: 'External Server Error',
+        });
+    }
 };
