@@ -10,6 +10,8 @@ const VolunteerSchema = new mongoose.Schema({
     gender: String,
     status: String,
     createdAt: Date,
+    dob:String,
+    email:String
 });
 
 const VolunteerModal = mongoose.model('volunteer', VolunteerSchema);
