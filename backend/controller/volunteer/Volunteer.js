@@ -3,7 +3,7 @@ const VolunteerModal = require('../../modal/volunteers/VolunteerModal');
 //localhost:3000/api/v1/volunteer (POST)
 exports.addNewVolunteer = async (req, res, next) => {
     try {
-        const { name, age, role, skill, vehicle, phone, gender, status } =
+        const { name, age, role, skill, vehicle, phone, gender, status,email,dob } =
             req.body;
         const newVolunteer = new VolunteerModal({
             name,
@@ -14,6 +14,8 @@ exports.addNewVolunteer = async (req, res, next) => {
             phone,
             gender,
             status,
+            email,
+            dob,
             createdAt: new Date(),
         });
 

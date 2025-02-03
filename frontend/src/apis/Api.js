@@ -9,3 +9,32 @@ export const volunteerRegister =async (formData) =>{
         console.log(error);
     }
 }
+
+export const getRegisteredVolunteers = async()=>{
+    try{
+        const response = await axios.get(`${BACKEND_URL}/volunteer?action=PENDING`)
+        return response;
+    }catch(error){
+        throw error
+    }
+
+}
+
+
+export const approveRegistration = async(id)=>{
+    try {
+        const response = await axios.put(`${BACKEND_URL}/volunteer/${id}?action=APPROVE`)
+        return response;
+    } catch (error) {
+            console.log(error);
+    }
+}
+
+export const rejectRegistration = async(id)=>{
+    try{
+            const response = await axios.put(`${BACKEND_URL}/volunteer/${id}?action=REJECT`);
+            return response;
+    }catch(error){
+        console.log(error);
+    }
+}
