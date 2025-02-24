@@ -3,8 +3,10 @@ import { IoAddCircle } from "react-icons/io5";
 import { LuFilter } from "react-icons/lu";
 import HomePost from "../../components/homepost/HomePost";
 import img from '../../assets/HeroImg.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
   const posts = [
     {
       image: img,
@@ -55,7 +57,7 @@ const Home = () => {
       <div className='flex justify-between py-7 px-5 sm:py-7 sm:px-8'>
         <h1 className='text-lg font-medium sm:text-2xl sm:font-semibold'>Relief Areas</h1>
         <ul className='flex'>
-          <button className='bg-blue-400 flex items-center py-2 px-4 h-10 rounded-lg text-white text-sm sm:text-lg sm:p-5'>
+          <button className='bg-blue-400 flex items-center py-2 px-4 h-10 rounded-lg text-white text-sm sm:text-lg sm:p-5 'onClick={()=> navigate("/admin/post")}>
             <IoAddCircle className="mr-2 sm:mr-3 sm:w-6 sm:h-6" />
             New Alert
           </button>

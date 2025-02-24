@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,Component } from 'react';
+import VideoPlayer from "react-video-js-player";
 import HeroImg from '../../assets/HeroImg.jpg';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
+import VideoCard from '../../components/videoCard/VideoCard.jsx';
+
 const Landing = () => {
+  
     useEffect(() => {
         Aos.init({ duration: 3000 });
     }, []);
@@ -14,7 +18,7 @@ const Landing = () => {
             <nav className="flex justify-between py-7 px-5 shadow-lg items-center">
                 <h1 className="text-lg font-medium">RescueBridge</h1>
                 <ul className="flex">
-                    <button className="bg-blue-400 py-4 px-7 rounded-lg text-white">
+                    <button className="bg-blue-400 py-4 px-7 rounded-lg text-white" onClick={()=> navigate("/login")}>
                         Login
                     </button>
                 </ul>
@@ -31,7 +35,7 @@ const Landing = () => {
                     <div className="flex justify-center items-center mt-3 sm:basis-2/4">
                         <button
                             className="bg-blue-400 py-4 px-7 rounded-lg w-2/4 sm:w-full text-white hover:shadow-md hover:shadow-blue-400 transition-all hover:scale-105"
-                            data-aos="slide-left"
+                            data-aos="fade-in"
                         >
                             Get Started
                         </button>
@@ -71,6 +75,8 @@ const Landing = () => {
                 </div>
             </div>
 
+
+            {/* volunteer register button */}
             <div className="flex flex-col justify-center items-center gap-3 p-5">
                 <p
                     className="text-center text-lg font-medium "
@@ -81,7 +87,7 @@ const Landing = () => {
                 <div className="flex justify-center items-center mt-3">
                     <button
                         className="bg-blue-400 py-2 px-7 rounded-lg w-4/4 text-white hover:shadow-md hover:shadow-blue-400 transition-all hover:scale-105"
-                        data-aos="slide-left"
+                        data-aos="fade-in"
                         onClick={() => navigate('/register')}
                     >
                         Become a Volunteer
@@ -89,6 +95,13 @@ const Landing = () => {
                 </div>
             </div>
 
+
+
+
+            {/* <div>
+            <VideoCard  />
+            </div> */}
+            {/* footer code */}
             <footer className="bg-gray-800 text-white p-4 mt-5 ">
                 <div className="container mx-auto">
                     <div className="flex justify-between items-center">
@@ -107,6 +120,8 @@ const Landing = () => {
                     </div>
                 </div>
             </footer>
+        
+        
         </div>
     );
 };

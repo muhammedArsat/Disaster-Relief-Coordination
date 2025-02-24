@@ -10,6 +10,8 @@ import VolunteerProfile from './pages/volunteerprofile/VolunteerProfile';
 import NewRequest from './pages/newrequest/NewRequest';
 import VolunteerRegister from './pages/volunteerRegister/VolunteerRegister';
 import VolunteerApproval from './pages/volunteerApproval/VolunteerApproval';
+import Login from './pages/login/Login';
+
 import './App.css';
 const App = () => {
     return (
@@ -17,8 +19,10 @@ const App = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Landing />} />
+                <Route path='/login' element={<Login/>}/>
                 <Route path="/admin/home" element={<HomePage />} />
                 <Route path="/admin/post" element={<PostPage />} />
+
                 <Route
                     path="/admin/volunteer-list"
                     element={<VolunteerList />}
