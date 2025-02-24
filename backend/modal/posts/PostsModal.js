@@ -1,6 +1,4 @@
 const mongoose =require('mongoose');
-
-
 const PostSchema=new mongoose.Schema({
 place:String,
 disaster:String,
