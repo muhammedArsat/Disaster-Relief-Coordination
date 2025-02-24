@@ -17,7 +17,7 @@ exports.addNewVolunteer = async (req, res, next) => {
             email,
             dob,
             createdAt: new Date(),
-        });
+        }); 
 
         await newVolunteer.save();
         res.status(201).json({

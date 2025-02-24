@@ -17,8 +17,6 @@ app.use(cors({
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
 }));
-
-
 app.use("/api/v1",volunteerRoutes,postRoutes);
 app.listen(process.env.PORT, () => {
     console.log(

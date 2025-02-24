@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const VolunteerSchema = new mongoose.Schema({
-    name: String,
+    name: String, 
     age: String,
     role: String,
     skill: String,
