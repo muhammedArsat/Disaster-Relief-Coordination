@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const BACKEND_URL = "http://localhost:3000/api/v1"
+const NEWSAPI = "3da1f14926d3473e83f328a4cba2676b";
 export const volunteerRegister =async (formData) =>{
     try{
         const response = await axios.post(`${BACKEND_URL}/volunteer`, formData);
