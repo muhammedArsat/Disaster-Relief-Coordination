@@ -11,7 +11,8 @@ const VolunteerSchema = new mongoose.Schema({
     status: String,
     createdAt: Date,
     dob:String,
-    email:String
+    email:String,
+    password:String
 });
 
 const VolunteerModal = mongoose.model('volunteer', VolunteerSchema);

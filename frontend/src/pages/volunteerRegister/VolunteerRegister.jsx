@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from '../../assets/VolunteerImg.jpg';
+import Image from '../../assets/Queue.gif';
 import { volunteerRegister } from '../../apis/Api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
