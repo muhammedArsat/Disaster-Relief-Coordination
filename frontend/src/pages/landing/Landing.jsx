@@ -1,13 +1,16 @@
 import React, { useEffect,Component } from 'react';
 import VideoPlayer from "react-video-js-player";
-import HeroImg from '../../assets/HeroImg.jpg';
+import HeroGif from '../../assets/HeroGif.gif';
+import Usp1Img from "../../assets/Usp1.gif"
+import Usp2Img from "../../assets/Usp2.gif"
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
 import VideoCard from '../../components/videoCard/VideoCard.jsx';
 
 const Landing = () => {
-  
+
     useEffect(() => {
         Aos.init({ duration: 3000 });
     }, []);
@@ -45,7 +48,7 @@ const Landing = () => {
                     className="flex justify-center items-center sm:basis-2/4"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Hero Image " className="w-80 " />
+                    <img src={HeroGif} alt="Hero Image " className="w-80 " />
                 </div>
             </div>
             <h1 className="w-full text-center text-xl tracking-wider font-semibold">
@@ -56,21 +59,21 @@ const Landing = () => {
                     className="flex flex-col justify-center items-center shadow-lg rounded-md "
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={Usp1Img} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
                 <div
                     className="flex flex-col justify-center items-center shadow-lg rounded-md"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={Usp2Img} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>{' '}
                 <div
                     className="flex flex-col justify-center items-center shadow-lg rounded-md"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={HeroGif} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
             </div>
@@ -120,8 +123,8 @@ const Landing = () => {
                     </div>
                 </div>
             </footer>
-        
-        
+
+
         </div>
     );
 };
