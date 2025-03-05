@@ -14,6 +14,7 @@ import Login from '../pages/login/Login';
 import NotFound from '../pages/notFound/NotFound';
 import NoSideBarLayout from '../layouts/NoSideBarLayout';
 import SideBarLayout from '../layouts/SideBarLayout';
+import Test from "../Test.jsx";
 
 const RoutePaths = () => {
     return (
@@ -24,6 +25,7 @@ const RoutePaths = () => {
                     <Route path="/" element={<Landing />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<VolunteerRegister />} />
+                    <Route path="/test" element={<Test />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
 
