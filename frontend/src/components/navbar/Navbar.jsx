@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { CiMenuBurger } from 'react-icons/ci';
 import { useLocation, useNavigate } from 'react-router-dom';
+import News from '../../components/liveNews/News';
 const Navbar = () => {
     const { pathname } = useLocation();
     const [isMobile, setIsMobile] = useState(false);
     const [isLandingPage, setIsLandingPage] = useState(false);
+    const [isNewsOpen, setIsNewsOpen] = useState(false);
     // useEffect(() => {
     //     if (isMobile) {
     //         document.body.style.overflow = 'hidden';
@@ -39,7 +41,7 @@ const Navbar = () => {
                 <ul className="hidden sm:block">
                     <li
                         className={`${
-                            pathname === '/admin/home'
+                            pathname === '/admin/home'&& !isNewsOpen
                                 ? 'bg-blue-400 rounded-md text-white'
                                 : ''
                         } p-4 flex justify-center items-center w-56 text-lg font-mono cursor-pointer`}
@@ -50,7 +52,7 @@ const Navbar = () => {
 
                     <li
                         className={`${
-                            pathname === '/admin/volunteer-list'
+                            pathname === '/admin/volunteer-list'&& !isNewsOpen
                                 ? 'bg-blue-400 rounded-md text-white'
                                 : ''
                         } p-4 flex justify-center items-center w-56 text-lg font-mono cursor-pointer`}
@@ -60,7 +62,7 @@ const Navbar = () => {
                     </li>
                     <li
                         className={`${
-                            pathname === '/admin/volunteer-approval'
+                            pathname === '/admin/volunteer-approval' && !isNewsOpen
                                 ? 'bg-blue-400 rounded-md text-white'
                                 : ''
                         } p-4 flex justify-center items-center w-56 text-lg font-mono cursor-pointer relative`}
@@ -70,6 +72,13 @@ const Navbar = () => {
                         <div className="bg-red-600 w-4 h-4 rounded-full absolute top-5 right-5">
                             <p className="text-sm text-center text-white">1</p>
                         </div>
+                    </li>
+
+                    <li
+                        className={` p-4 flex justify-center items-center w-56 text-lg font-mono cursor-pointer`}
+                        onClick={() => setIsNewsOpen(!isNewsOpen)}
+                    >
+                        Live News
                     </li>
                     <li
                         className="p-4 flex justify-center items-center w-56 text-lg font-mono absolute bottom-2 cursor-pointer bg-slate-400 rounded-lg hover:scale-105 transition-transform hover:shadow-lg text-white"
@@ -115,6 +124,7 @@ const Navbar = () => {
                     >
                         New Requests
                     </li>
+
                     <li
                         className=" p-4 absolute bottom-40 flex justify-center items-center w-36 left-5 font-medium text-lg bg-slate-400 rounded-lg text-white  "
                         onClick={() => {
@@ -124,6 +134,13 @@ const Navbar = () => {
                         logout
                     </li>
                 </ul>
+                {isNewsOpen && (
+                    <div className="  md:ml-56 w-screen min-h-screen absolute  ">
+                        <div className="absolute top-1/4 left-1/4 md:left-44">
+                            <News />
+                        </div>
+                    </div>
+                )}
             </nav>
         </>
     );
