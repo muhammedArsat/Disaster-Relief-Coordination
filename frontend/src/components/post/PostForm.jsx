@@ -27,10 +27,19 @@ const PostForm = () => {
         </div>
 
         <div>
-          <label className="block text-gray-600 mb-1">Date and Time</label>
+          <label className="block text-gray-600 mb-1">Date</label>
           <input
-            type="datetime-local"
+            type="date"
             name="date"
+            className="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
+
+        <div>
+          <label className="block text-gray-600 mb-1">Time</label>
+          <input
+            type="time"
+            name="time"
             className="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
           />
         </div>
