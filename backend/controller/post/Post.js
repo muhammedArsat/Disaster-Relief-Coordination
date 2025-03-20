@@ -15,3 +15,16 @@ exports.getAllPosts=async(req,res,next)=>{
     }
 
 }
+
+exports.postForm = async(req,res,next)=>{
+    try{
+        const userPost = new PostModel(req.body);
+        const savePost = await userPost.save();
+        res.status(201).json(savePost);
+    }
+    catch{
+        res.status(500).json({
+            message:"Internal Server Error"
+            });
+    }
+}
