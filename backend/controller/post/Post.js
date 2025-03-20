@@ -1,5 +1,5 @@
 const postModal = require('../../modal/posts/PostsModal');
-const PostModel = require("../../modal/posts/PostsModal");
+
 
 exports.getAllPosts=async(req,res,next)=>{
     try{
@@ -12,5 +12,6 @@ exports.getAllPosts=async(req,res,next)=>{
         message:"Internal Server Error"
         })
     }
+    
 
 }

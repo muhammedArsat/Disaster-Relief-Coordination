@@ -10,6 +10,7 @@
   "author": "hamsa,arsath,kavi,kavin",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
