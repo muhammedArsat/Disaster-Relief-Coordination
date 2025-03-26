@@ -1,28 +1,82 @@
-import React from 'react';
-import LoginGif from "../../assets/login.gif"
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginGif from '../../assets/login.gif';
+import { IoIosLogIn } from 'react-icons/io';
+
 const Login = () => {
     const navigate = useNavigate();
+    const emailFocus = useRef();
+    const passwordFocus = useRef();
+    useEffect(() => {
+        emailFocus.current.focus();
+    }, []);
+
+    const handleEmailKeyDown = (e) => {
+        if (e.key == 'Enter') {
+            e.preventDefault();
+            passwordFocus.current.focus();
+        }
+    };
+
+    const handlePasswordKeyDown = (e) => {
+        if (e.key == 'Enter') {
+            e.preventDefault();
+            handleLogin();
+        }
+    };
+
+    const handleLogin = () => {
+        navigate('/admin/home');
+    };
     return (
-        <div className="flex justify-center items-center min-h-screen  ">
-            <img src={LoginGif} alt="" />
-            <div className=" shadow-2xl md:shadow-none flex justify-center items-center   flex-col gap-3 mx-10 px-2 rounded-md ">
-                <h1 className="text-left w-full  font-medium text-lg mt-3">Sign In</h1>
-                <p className='text-left w-full '>stay updated by signed in</p>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    className="rounded-3xl py-2  outline-blue-400 border-white  px-3 bg-gray-200  "
-                />
-                <input
-                    type="text"
-                    placeholder="password"
-                    className="rounded-3xl py-2  outline-blue-400 border-white  px-3 bg-gray-200  "
-                />
-              <p className='text-blue-800 w-full text-center decoration-solid ' >forget Password</p>
-                <button className="bg-blue-300 w-20 h-10 my-3 rounded-md" onClick={()=>navigate("/admin/home")}>
-                    Login
-                </button>
+        <div className=" flex justify-center items-center min-h-screen">
+            <div className=" mx-10 shadow-lg flex justify-center items-center gap-4 flex-col px-4 rounded-md py-3 sm:flex-row">
+                <div>
+                    <h1 className="sm:hidden text-xl -tracking-tighter">
+                        RescueBridge
+                    </h1>
+                </div>
+                <div>
+                    <img
+                        src={LoginGif}
+                        alt="login Gif"
+                        className="rounded-md"
+                    />
+                </div>
+                <div className="flex flex-col gap-2 sm:gap-8 ">
+                    <h1 className="hidden sm:block text-2xl -tracking-tighter">
+                        RescueBridge
+                    </h1>
+                    <p className="font-medium -tracking-tighter text-lg">
+                        Signed In to Stay Update
+                    </p>
+                    <div className="flex flex-col gap-2">
+                        <label className="font-medium">Email</label>
+                        <input
+                            ref={emailFocus}
+                            type="text"
+                            placeholder="jhoe@gmail.com"
+                            className="border border-solid border-black px-4 py-2 rounded-md outline-blue-400"
+                            onKeyDown={handleEmailKeyDown}
+                        />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <label className="font-medium">Password</label>
+                        <input
+                            type="text"
+                            placeholder="Password"
+                            className="border border-solid border-black px-4 py-2 rounded-md outline-blue-400"
+                            ref={passwordFocus}
+                            onKeyDown={handlePasswordKeyDown}
+                        />
+                    </div>
+                    <button
+                        className="min-w-full bg-blue-400 text-white py-2 rounded-md flex justify-center items-center gap-2"
+                        onClick={() => navigate('/admin/home')}
+                    >
+                        login <IoIosLogIn size={25} />{' '}
+                    </button>
+                </div>
             </div>
         </div>
     );

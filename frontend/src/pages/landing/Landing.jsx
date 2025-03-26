@@ -1,13 +1,16 @@
-import React, { useEffect,Component } from 'react';
-import VideoPlayer from "react-video-js-player";
-import HeroImg from '../../assets/HeroImg.jpg';
+import React, { useEffect, Component } from 'react';
+import VideoPlayer from 'react-video-js-player';
+import HeroGif from '../../assets/HeroGif.gif';
+import Usp1Img from '../../assets/Usp1.gif';
+import Usp2Img from '../../assets/Usp2.gif';
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
 import VideoCard from '../../components/videoCard/VideoCard.jsx';
+import News from '../../components/liveNews/News.jsx';
 
 const Landing = () => {
-  
     useEffect(() => {
         Aos.init({ duration: 3000 });
     }, []);
@@ -18,7 +21,10 @@ const Landing = () => {
             <nav className="flex justify-between py-7 px-5 shadow-lg items-center">
                 <h1 className="text-lg font-medium">RescueBridge</h1>
                 <ul className="flex">
-                    <button className="bg-blue-400 py-4 px-7 rounded-lg text-white" onClick={()=> navigate("/login")}>
+                    <button
+                        className="bg-blue-400 py-4 px-7 rounded-lg text-white"
+                        onClick={() => navigate('/login')}
+                    >
                         Login
                     </button>
                 </ul>
@@ -30,7 +36,8 @@ const Landing = () => {
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Id fuga dolores assumenda rem dolore, ipsa numquam
                         quaerat, quidem ratione incidunt, amet itaque
-                        temporibus. Nulla ad, aut modi molestiae veniam est.
+                        temporibus. Nulla ad, aut modi molestiae veniam est.The
+                        quick brown
                     </p>
                     <div className="flex justify-center items-center mt-3 sm:basis-2/4">
                         <button
@@ -45,7 +52,7 @@ const Landing = () => {
                     className="flex justify-center items-center sm:basis-2/4"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Hero Image " className="w-80 " />
+                    <img src={HeroGif} alt="Hero Image " className="w-80 " />
                 </div>
             </div>
             <h1 className="w-full text-center text-xl tracking-wider font-semibold">
@@ -56,25 +63,24 @@ const Landing = () => {
                     className="flex flex-col justify-center items-center shadow-lg rounded-md "
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={Usp1Img} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
                 <div
                     className="flex flex-col justify-center items-center shadow-lg rounded-md"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={Usp2Img} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>{' '}
                 <div
                     className="flex flex-col justify-center items-center shadow-lg rounded-md"
                     data-aos="zoom-in"
                 >
-                    <img src={HeroImg} alt="Feature 1" className="w-64" />
+                    <img src={HeroGif} alt="Feature 1" className="w-64" />
                     <p className="font-medium">Lorem, ipsum.</p>
                 </div>
             </div>
-
 
             {/* volunteer register button */}
             <div className="flex flex-col justify-center items-center gap-3 p-5">
@@ -94,9 +100,18 @@ const Landing = () => {
                     </button>
                 </div>
             </div>
-
-
-
+            <div className="flex gap-4 justify-center items-center mx-5">
+                <div>
+                    <News />
+                </div>
+                <div>
+                    <p className='text-center'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Veritatis rem in praesentium iure exercitationem
+                        sapiente maiores explicabo eum quo beatae.
+                    </p>
+                </div>
+            </div>
 
             {/* <div>
             <VideoCard  />
@@ -120,8 +135,6 @@ const Landing = () => {
                     </div>
                 </div>
             </footer>
-        
-        
         </div>
     );
 };
