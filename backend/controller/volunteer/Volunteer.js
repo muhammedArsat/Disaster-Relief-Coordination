@@ -42,7 +42,7 @@ exports.addNewVolunteer = async (req, res, next) => {
             dob,
             password: null,
             createdAt: new Date(),
-        });
+        }); 
 
         await newVolunteer.save();
         res.status(201).json({

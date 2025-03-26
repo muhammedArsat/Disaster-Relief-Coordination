@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const PostSchema = new mongoose.Schema({
   disaster: String,
   location: String,
@@ -13,6 +12,5 @@ const PostSchema = new mongoose.Schema({
   cloth: Number,
   medical: Number
 });
-
 const PostModel = mongoose.model('post', PostSchema);
 module.exports = PostModel;
