@@ -1,56 +1,24 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import { IoAddCircle } from "react-icons/io5";
 import { LuFilter } from "react-icons/lu";
 import HomePost from "../../components/homepost/HomePost";
 import img from '../../assets/HeroImg.jpg';
 import { useNavigate } from 'react-router-dom';
+import { getAllPosts } from '../../apis/Api';
 
 const Home = () => {
     const navigate = useNavigate();
-  const posts = [
-    {
-      image: img,
-      place: 'California',
-      disaster: 'Fire',
-      date: '2025-01-10',
-      time:'09.00 pm'
-    },
-    {
-      image: img,
-      place: 'Kerala',
-      disaster: 'Earthquake',
-      date: '2025-01-11',
-      time:'09:00 am'
-    },
-    {
-      image: img,
-      place: 'Madhya Pradesh',
-      disaster: 'flood',
-      date: '2025-01-11',
-      time:'09:00 am'
-    },
-    {
-      image: img,
-      place: 'Goa',
-      disaster: 'Earthquake',
-      date: '2025-01-11',
-      time:'09:00 am'
-    },
-    {
-      image: img,
-      place: 'Antarctica',
-      disaster: 'Earthquake',
-      date: '2025-01-11',
-      time:'09:00 am'
-    },
-    {
-      image: img,
-      place: 'Los Angeles',
-      disaster: 'Earthquake',
-      date: '2025-01-11',
-      time:'09:00 am'
-    },
-  ];
+    const [getAllpost,setAllpost]=useState([]);
+    useEffect(()=>{
+        const listofAllPosts=async()=>{
+            try{
+                const response=await getAllPosts();
+                setAllpost(response.data.allPosts);
+            }
+            catch(error){}
+        };
+        listofAllPosts();
+    },[getAllpost]);
 
   return (
     <div className='mt-24 sm:mt-0 sm:ml-72 sm:mr-2 '>
@@ -74,8 +42,8 @@ const Home = () => {
           />
         </div>
         <div className='flex flex-col items-start py-5 px-1 sm:w-full'>
-          {posts.map((post, index) => (
-            <HomePost key={index} image={post.image} place={post.place} disaster={post.disaster} date={post.date} time={post.time} />
+          {getAllpost.map((post, index) => (
+            <HomePost key={index} image={post.image || img}  location={post.location} disaster={post.disaster} date={post.date} time={post.time} />
           ))}
         </div>
       </div>
