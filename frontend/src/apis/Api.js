@@ -10,7 +10,7 @@ export const volunteerRegister = async (formData) => {
         console.log(error);
     }
 };
- 
+
 export const getRegisteredVolunteers = async () => {
     try {
         const response = await axios.get(
@@ -21,7 +21,6 @@ export const getRegisteredVolunteers = async () => {
         throw error;
     }
 };
-
 export const approveRegistration = async (id) => {
     try {
         const response = await axios.put(
@@ -43,3 +42,17 @@ export const rejectRegistration = async (id) => {
         console.log(error);
     }
 };
+// --------------------------------------------------------------------------------------------------------
+//  Homepage get all posts
+export const getAllPosts=async()=>{
+    try{
+        const response=await axios.get(
+            `${BACKEND_URL}/post`
+        );
+        return response;
+    }
+    catch(error){
+        throw error;
+    }
+};
+//--------------------------------------------------------------------------------------------------------------------
