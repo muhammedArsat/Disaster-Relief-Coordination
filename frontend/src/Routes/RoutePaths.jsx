@@ -15,6 +15,8 @@ import NotFound from '../pages/notFound/NotFound';
 import NoSideBarLayout from '../layouts/NoSideBarLayout';
 import SideBarLayout from '../layouts/SideBarLayout';
 import Test from "../Test.jsx";
+import VolunteerHome from "../volunteerPages/volunteerHome/VolunteerHome.jsx";
+import VolunteerProfilePage from "../volunteerPages/volunteerProfile/VolunteerProfilePage.jsx";
 
 const RoutePaths = () => {
     return (
@@ -41,13 +43,15 @@ const RoutePaths = () => {
                         path="/admin/volunteer-profile"
                         element={<VolunteerProfile />}
                     />
-                    <Route path="/admin/relief" element={<ReliefPage />} />
+                    <Route path="/relief" element={<ReliefPage />} />
                     <Route path="/admin/new-request" element={<NewRequest />} />
                     <Route
                         path="/admin/volunteer-approval"
                         element={<VolunteerApproval />}
                     />
-               
+                    <Route path='/volunteer/home' element={<VolunteerHome/>}/>
+                    <Route path="/volunteer/profile" element={<VolunteerProfilePage/>}/>
+                   
                 </Route>
                 
             </Routes>

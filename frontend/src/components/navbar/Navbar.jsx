@@ -89,6 +89,17 @@ const Navbar = () => {
                     >
                         logout
                     </li>
+
+                    <li
+                        className={`${
+                            pathname === '/admin/home'&& !isNewsOpen
+                                ? 'bg-blue-400 rounded-md text-white'
+                                : ''
+                        } p-4 flex justify-center items-center w-56 text-lg font-mono cursor-pointer`}
+                        onClick={() => navigate('/volunteer/profile')}
+                    >
+                        Profile
+                    </li>
                 </ul>
                 <ul
                     className={`${
@@ -132,6 +143,17 @@ const Navbar = () => {
                         }}
                     >
                         logout
+                    </li>
+
+                    <li
+                        className={`${
+                            pathname === '/volunteer/profile'
+                                ? 'bg-blue-400 text-white p-3 rounded-lg'
+                                : ''
+                        }p-4 font-medium text-lg `}
+                        onClick={() => navigate('/volunteer/profile')}
+                    >
+                        Profile
                     </li>
                 </ul>
                 {isNewsOpen && (
