@@ -2,10 +2,10 @@ import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const HomePost = ({ location, image, disaster, date, time }) => {
+const HomePost = ({ location, image, disaster, date, time, id }) => {
     const navigate=useNavigate();
     const handleNavigate=()=>{
-        navigate('/admin/relief');
+        navigate(`/admin/relief/${id}`);
     };
   return (
     <div className="flex border-b-2 p-2 items-center sm:w-full">
