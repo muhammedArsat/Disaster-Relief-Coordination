@@ -70,3 +70,16 @@ export const getReliefByid = async(id)=>{
         throw error
     }
 }
+
+//Relief post
+export const postReliefForm = async(data) => {
+    try{
+        const response = await axios.post(
+            `${BACKEND_URL}/post`, data
+        )
+        return response;
+    }
+    catch{
+        console.log(error);
+    }
+}
