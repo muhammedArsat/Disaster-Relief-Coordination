@@ -56,5 +56,17 @@ export const getAllPosts=async()=>{
     }
 };
 //--------------------------------------------------------------------------------------------------------------------
+// Get Relief By id
 
 
+export const getReliefByid = async(id)=>{
+
+    try{
+        const response = await axios.get(
+            `${BACKEND_URL}/post/${id}`
+        )
+        return response;
+    }catch(error){
+        throw error
+    }
+}

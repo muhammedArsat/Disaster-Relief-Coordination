@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 const PostSchema = new mongoose.Schema({
   disaster: String,
-  location: String,
+  location: {
+    district: String,
+    state: String,
+    country: String,
+    latitude: Number,
+    longitude: Number
+  },
   date: String,
   time: String,
   childCount: Number,
