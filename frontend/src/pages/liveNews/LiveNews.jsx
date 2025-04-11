@@ -1,9 +1,9 @@
 import React from 'react'
-
-const LiveNews = () => {
+import News from '../../components/liveNews/News'
+const LiveNews = ({handleNewsToggle}) => {
   return (
     <div>
-      <News/>
+      <News newsToggle={handleNewsToggle}/>
     </div>
   )
 }

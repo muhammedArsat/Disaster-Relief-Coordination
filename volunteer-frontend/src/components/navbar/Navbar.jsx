@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CiMenuBurger } from 'react-icons/ci';
 import { useLocation, useNavigate } from 'react-router-dom';
-import News from '../../components/liveNews/News';
+import News from '../../components/liveNews/LiveNews';
 const Navbar = () => {
     const { pathname } = useLocation();
     const [isMobile, setIsMobile] = useState(false);
