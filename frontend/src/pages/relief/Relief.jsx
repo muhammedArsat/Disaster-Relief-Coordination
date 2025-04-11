@@ -1,5 +1,5 @@
 // Relief.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Map from '../../components/map/Map';
 import { FaFemale, FaChild, FaMale } from 'react-icons/fa';
 import { FaBowlFood } from "react-icons/fa6";
@@ -9,7 +9,14 @@ import { FaBriefcaseMedical } from "react-icons/fa";
 import PopulationCard from '../../components/population/Population';
 import { MdCleanHands } from "react-icons/md";
 
+
 const Relief = () => {
+    const id = "67f4ebacb86c9c30aeadc234"
+    const [reliefData, setReliefData] = useState();
+
+    useEffect(()=>{
+
+    },[]);
     return (
         <div className="sm:ml-72 mt-32 sm:mt-0">
             <div className="mt-10 mx-7 ">

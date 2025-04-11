@@ -43,7 +43,7 @@ const RoutePaths = () => {
                         path="/admin/volunteer-profile"
                         element={<VolunteerProfile />}
                     />
-                    <Route path="/relief" element={<ReliefPage />} />
+                    <Route path="/admin/relief/:id" element={<ReliefPage />} />
                     <Route path="/admin/new-request" element={<NewRequest />} />
                     <Route
                         path="/admin/volunteer-approval"

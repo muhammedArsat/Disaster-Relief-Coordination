@@ -8,7 +8,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
 import VideoCard from '../../components/videoCard/VideoCard.jsx';
-import News from '../../components/liveNews/News.jsx';
+import News from '../../components/liveNews/LandingNews.jsx';
 
 const Landing = () => {
     useEffect(() => {
