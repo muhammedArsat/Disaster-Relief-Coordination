@@ -43,7 +43,7 @@ const Home = () => {
         </div>
         <div className='flex flex-col items-start py-5 px-1 sm:w-full'>
           {getAllpost.map((post, index) => (
-            <HomePost key={index} image={post.image || img}  location={post.location} disaster={post.disaster} date={post.date} time={post.time} />
+            <HomePost key={index} image={post.image || img}  location={post.location.district} disaster={post.disaster} date={post.date} time={post.time} id={post._id}/>
           ))}
         </div>
       </div>

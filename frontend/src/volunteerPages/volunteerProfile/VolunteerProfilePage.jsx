@@ -42,6 +42,8 @@ const VolunteerProfile = () => {
                                 className="border focus:to-blue-400 outline-blue-400 px-3 py-4 rounded-md"
                                 value="male"
                                 type="radio"
+                                name='gender'
+
                             />
                             <span>Male</span>
                         </div>
@@ -49,6 +51,7 @@ const VolunteerProfile = () => {
                             <input
                                 className="border focus:to-blue-400 outline-blue-400 px-3 py-4 rounded-md"
                                 type="radio"
+                                name='gender'
                             />
                             <span>Female</span>
                         </div>
@@ -67,6 +70,9 @@ const VolunteerProfile = () => {
                                 className="border focus:to-blue-400 outline-blue-400 px-3 py-4 rounded-md"
                                 value="male"
                                 type="radio"
+                                name='ownvehicle'
+
+                                
                             />
                             <span>Yes</span>
                         </div>
@@ -74,6 +80,7 @@ const VolunteerProfile = () => {
                             <input
                                 className="border focus:to-blue-400 outline-blue-400 px-3 py-4 rounded-md"
                                 type="radio"
+                                name='ownvehicle'
                             />
                             <span>No</span>
                         </div>
